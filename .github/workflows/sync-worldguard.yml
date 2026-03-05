@@ -1,0 +1,39 @@
+name: Sync WorldGuard Docs
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Checkout upstream WorldGuardDocs
+        uses: actions/checkout@v4
+        with:
+          repository: EngineHub/WorldGuardDocs
+          path: plugins/worldguard/upstream
+
+      - name: Remove upstream git metadata
+        run: rm -rf plugins/worldguard/upstream/.git
+
+      - name: Commit changes when upstream updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- plugins/worldguard/upstream; then
+            echo "No upstream changes detected."
+            exit 0
+          fi
+
+          git add plugins/worldguard/upstream
+          git commit -m "chore(worldguard): sync upstream docs"
+          git push
