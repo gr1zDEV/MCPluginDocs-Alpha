@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="McPluginDocs is a community documentation hub for Minecraft plugins."
+    />
+    <title>McPluginDocs — Community Minecraft Plugin Docs</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#home" aria-label="McPluginDocs home">
+          <img src="assets/logo.svg" alt="McPluginDocs logo" width="32" height="32" />
+          <span>McPluginDocs</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#plugins">Plugins</a>
+          <a href="#submit">Submit</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <div class="header-actions">
+          <form class="search" role="search" action="#" method="get" onsubmit="return false;">
+            <label for="q" class="sr-only">Search docs</label>
+            <input id="q" name="q" type="search" placeholder="Search plugins/docs" />
+            <button type="submit">Search</button>
+          </form>
+          <a class="github-link" href="#">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="container">
+          <p class="eyebrow">Public Documentation Hub</p>
+          <h1>McPluginDocs</h1>
+          <p class="subtitle">Community documentation hub for Minecraft plugins.</p>
+
+          <div class="hero-ctas">
+            <a class="button primary" href="#plugins">Browse Docs</a>
+            <a class="button secondary" href="#submit">Submit a Plugin</a>
+          </div>
+
+          <ul class="stats" aria-label="Site statistics">
+            <li><strong>0</strong> Plugins</li>
+            <li><strong>0</strong> Pages</li>
+            <li><strong>0</strong> Contributors</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="plugins" class="section">
+        <div class="container">
+          <h2>Featured / Recently Added</h2>
+          <div class="plugin-grid">
+            <article class="card">
+              <h3>ClaimGuard</h3>
+              <p>Land claiming and anti-grief controls for survival communities.</p>
+              <p class="tags"><span>Protection</span><span>Claims</span><span>Survival</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+
+            <article class="card">
+              <h3>AdminPulse</h3>
+              <p>Moderation utilities, reports, and live server admin dashboards.</p>
+              <p class="tags"><span>Admin</span><span>Moderation</span><span>Tools</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+
+            <article class="card">
+              <h3>EconomyCore</h3>
+              <p>Virtual economy systems with vault integration and shop hooks.</p>
+              <p class="tags"><span>Economy</span><span>Vault</span><span>Shops</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+
+            <article class="card">
+              <h3>QuestForge</h3>
+              <p>Design branching quests, objectives, and reward pipelines.</p>
+              <p class="tags"><span>RPG</span><span>Quests</span><span>Progression</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+
+            <article class="card">
+              <h3>NetherGate Plus</h3>
+              <p>Portal management, destination rules, and cross-world transport.</p>
+              <p class="tags"><span>Teleport</span><span>Worlds</span><span>Travel</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+
+            <article class="card">
+              <h3>BuildAudit</h3>
+              <p>Rollback-ready build tracking and collaborative history views.</p>
+              <p class="tags"><span>Logging</span><span>Build</span><span>Audit</span></p>
+              <a class="button small" href="#">View Docs</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="submit" class="section alt">
+        <div class="container split">
+          <div>
+            <h2>Submit a Plugin</h2>
+            <p>
+              Share your project documentation with the community. We start with link-only listings
+              and expand based on permissions.
+            </p>
+            <p class="helper">
+              Link-only by default unless redistribution permission/license is clear.
+            </p>
+          </div>
+
+          <form class="submit-form" action="#" method="post" onsubmit="return false;">
+            <label for="pluginName">Plugin name</label>
+            <input id="pluginName" name="pluginName" type="text" required />
+
+            <label for="docsUrl">Primary docs URL</label>
+            <input id="docsUrl" name="docsUrl" type="url" placeholder="https://" required />
+
+            <label for="licenseNotes">License/permission notes</label>
+            <textarea id="licenseNotes" name="licenseNotes" rows="4"></textarea>
+
+            <label for="contact">Contact (optional)</label>
+            <input id="contact" name="contact" type="text" />
+
+            <button class="button primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <h2>About & Policy Preview</h2>
+          <ul class="policy-list">
+            <li>We link to official docs by default.</li>
+            <li>Mirrors only when allowed by license or explicit permission.</li>
+            <li>Attribution and source commit are shown on mirrored docs.</li>
+            <li>Request removal: docs@mcplugindocs.example</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year">2026</span> McPluginDocs</p>
+        <nav aria-label="Footer navigation">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">DMCA/Removal</a>
+        </nav>
+      </div>
+      <p class="disclaimer">
+        Unofficial community project. Not affiliated with plugin authors.
+      </p>
+    </footer>
+
+    <script src="assets/app.js"></script>
+  </body>
+</html>
